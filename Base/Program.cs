@@ -12,6 +12,7 @@ namespace ConsoleApp2
         {
             AdventureWorksLT2017Entities e = new AdventureWorksLT2017Entities();
             e.Database.Log = Console.Write;
+            //e.Database.Log += System.Diagnostics.Debug.WriteLine;
             e.Database.Log += s => System.Diagnostics.Debug.WriteLine(s);
             var req = from commande in e.SalesOrderHeader
                       where commande.OrderDate == new DateTime(2008, 6, 1)
